@@ -133,5 +133,11 @@ public class VarastoTest {
         assertTrue(varasto2.toString().contains("saldo = "));
         assertTrue(varasto2.toString().contains(" vielä tilaa 5"));
     }
+    
+    @Test
+    public void konstruktoriAlkuSaldollaSaaTilavuudeksiVahintaan0() {
+        Varasto varasto3 = new Varasto(-1.4, 3);
+        assertEquals(0, varasto3.getTilavuus(), vertailuTarkkuus);
+    }
 
 }
