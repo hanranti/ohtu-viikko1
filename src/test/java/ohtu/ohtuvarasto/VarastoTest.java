@@ -65,4 +65,16 @@ public class VarastoTest {
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
 
+    @Test
+    public void ylimääräinenHukkaan() {
+        varasto.lisaaVarastoon(11);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void otetaanVainVarastossaOlevaMaara() {
+        varasto.lisaaVarastoon(5);
+        varasto.otaVarastosta(6);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
 }
